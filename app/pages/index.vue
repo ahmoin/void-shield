@@ -73,7 +73,7 @@
           },
           {
             label: 'View on GitHub',
-            to: 'https://github.com/nuxt-ui-templates/starter',
+            to: 'https://github.com/ahmoin/void-shield',
             target: '_blank',
             icon: 'i-simple-icons-github',
             color: 'neutral',
