@@ -23,7 +23,7 @@ export async function createCheckRun({
   sha: string
   installationId: number
 }) {
-  const [owner, repoName] = repo.split('/')
+  const [owner, repoName] = repo.split('/') as [string, string]
   const octokit = getOctokit(installationId)
 
   await octokit.checks.create({
