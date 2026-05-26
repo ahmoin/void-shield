@@ -12,9 +12,8 @@
           size: 'xl'
         }, {
           label: 'Docs',
-          to: 'https://github.com/nuxt-ui-templates/starter',
+          to: 'https://void-shield.vercel.app/docs/getting-started',
           target: '_blank',
-          icon: 'i-simple-icons-github',
           size: 'xl',
           color: 'neutral',
           variant: 'subtle'

@@ -42,14 +42,14 @@ export default defineNuxtConfig({
     '/docs/**': { prerender: true }
   },
 
+  compatibilityDate: '2025-01-15',
+
   nitro: {
     prerender: {
       crawlLinks: true,
       routes: ['/docs/getting-started', '/docs/getting-started/installation', '/docs/configuration/voidshield-json']
     }
   },
-
-  compatibilityDate: '2025-01-15',
 
   eslint: {
     config: {
