@@ -103,7 +103,7 @@ export async function createCheckRun({
   try {
     const [files, config] = await Promise.all([
       getChangedFiles(octokit, owner, repoName, sha),
-      getConfig(octokit, owner, repoName, sha),
+      getConfig(octokit, owner, repoName, sha)
     ])
 
     for (const file of files) {

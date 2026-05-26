@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui'],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/content'],
 
   devtools: {
     enabled: true
@@ -29,8 +29,17 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  content: {
+    build: {
+      markdown: {
+        toc: { searchDepth: 1 }
+      }
+    }
+  },
+
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/docs/**': { prerender: true }
   },
 
   compatibilityDate: '2025-01-15',

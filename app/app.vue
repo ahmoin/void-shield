@@ -1,4 +1,9 @@
-<script setup>
+<script setup lang="ts">
+import type { ContentNavigationItem } from '@nuxt/content'
+
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
+provide<Ref<ContentNavigationItem[]>>('navigation', navigation as Ref<ContentNavigationItem[]>)
+
 useHead({
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [{ rel: 'icon', href: '/favicon.ico' }],
@@ -29,6 +34,8 @@ useSeoMeta({
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
       </template>
+
+      <UNavigationMenu :items="[{ label: 'Docs', to: '/docs/getting-started' }]" />
 
       <template #right>
         <UColorModeButton />
