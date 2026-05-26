@@ -2,6 +2,27 @@
 export default defineNuxtConfig({
   modules: ["@nuxt/eslint", "@nuxt/ui"],
 
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicon-white.png",
+          media: "(prefers-color-scheme: dark)",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicon-black.png",
+          media: "(prefers-color-scheme: light)",
+        },
+      ],
+    },
+  },
+
   devtools: {
     enabled: true,
   },
