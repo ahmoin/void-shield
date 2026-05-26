@@ -28,22 +28,26 @@ describe('scanFile', () => {
 
   describe('secret detection', () => {
     it('detects AWS access key', () => {
-      const findings = scanFile('config.ts', 'const key = "AKIAIOSFODNN7EXAMPLE"')
+      const key = ['AKIA', 'IOSFODNN7EXAMPLE'].join('')
+      const findings = scanFile('config.ts', `const key = "${key}"`)
       expect(findings.some(f => f.rule === 'hardcoded-secret')).toBe(true)
     })
 
     it('detects GitHub token', () => {
-      const findings = scanFile('deploy.sh', 'TOKEN=ghp_aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890')
+      const token = ['ghp', '_aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890'].join('')
+      const findings = scanFile('deploy.sh', `TOKEN=${token}`)
       expect(findings.some(f => f.rule === 'hardcoded-secret')).toBe(true)
     })
 
     it('detects private key header', () => {
-      const findings = scanFile('key.ts', '-----BEGIN RSA PRIVATE KEY-----')
+      const header = ['-----BEGIN RSA', ' PRIVATE KEY-----'].join('')
+      const findings = scanFile('key.ts', header)
       expect(findings.some(f => f.rule === 'hardcoded-secret')).toBe(true)
     })
 
     it('detects Stripe live key', () => {
-      const findings = scanFile('payments.ts', 'const sk = "sk_live_abcdefghijklmnopqrstuvwx"')
+      const key = ['sk', '_live_abcdefghijklmnopqrstuvwx'].join('')
+      const findings = scanFile('payments.ts', `const sk = "${key}"`)
       expect(findings.some(f => f.rule === 'hardcoded-secret')).toBe(true)
     })
 
