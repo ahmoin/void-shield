@@ -33,7 +33,12 @@ export default defineEventHandler(async (event) => {
   if (githubEvent === "push" || githubEvent === "pull_request") {
     const repo = payload.repository?.full_name;
     const sha = payload.after ?? payload.pull_request?.head?.sha;
+    const installationId = payload.installation?.id;
+
     console.log(`scan triggered: ${repo} @ ${sha}`);
+
+    // TODO: create check run, run scanners, post results
+    await createCheckRun({ repo, sha, installationId });
   }
 
   setResponseStatus(event, 200);
