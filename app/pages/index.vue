@@ -6,7 +6,7 @@
       :links="[
         {
           label: 'Get started',
-          to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
+          to: 'https://github.com/apps/void-shield',
           target: '_blank',
           trailingIcon: 'i-lucide-arrow-right',
           size: 'xl'
