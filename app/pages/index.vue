@@ -22,63 +22,63 @@
 
     <UPageSection
       id="features"
-      title="Everything you need to build modern Nuxt apps"
-      description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
+      title="Automated Security Auditing"
+      description="Void Shield integrates directly into the development workflow to identify and mitigate security vulnerabilities within the repository."
       :features="[
         {
-          icon: 'i-lucide-rocket',
-          title: 'Production-ready from day one',
+          icon: 'i-lucide-search',
+          title: 'Commit-Level Scanning',
           description:
-            'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.'
+            'Executes security audits on every push and pull request to identify vulnerabilities before they are merged into the main branch.'
         },
         {
-          icon: 'i-lucide-palette',
-          title: 'Beautiful by default',
+          icon: 'i-lucide-key',
+          title: 'Secret Detection',
           description:
-            'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.'
+            'Utilizes a regex-based engine to detect hardcoded credentials, API keys, and authentication tokens in plain text files.'
         },
         {
           icon: 'i-lucide-zap',
-          title: 'Lightning fast',
+          title: 'High-Speed Execution',
           description:
-            'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.'
+            'Optimized for low latency to ensure that security scanning does not impede the continuous integration and deployment pipeline.'
         },
         {
-          icon: 'i-lucide-blocks',
-          title: '100+ components included',
+          icon: 'i-lucide-settings-2',
+          title: 'JSON Configuration',
           description:
-            'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.'
+            'Define file exclusions using glob patterns in a .voidshield.json file located in the repository root via the ignorePaths property.'
         },
         {
-          icon: 'i-lucide-code-2',
-          title: 'Developer experience first',
+          icon: 'i-simple-icons-github',
+          title: 'Native GitHub Integration',
           description:
-            'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.'
+            'Authorized as a GitHub App to access repository metadata and content through the official GitHub API and webhooks.'
         },
         {
-          icon: 'i-lucide-shield-check',
-          title: 'Built for scale',
+          icon: 'i-lucide-bar-chart-3',
+          title: 'Risk Visualization',
           description:
-            'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.'
+            'Provides a dashboard for tracking vulnerability metrics and security status across all integrated repositories.'
         }
       ]"
     />
 
     <UPageSection>
       <UPageCTA
-        title="Ready to build your next Nuxt app?"
-        description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
+        title="Secure your codebase against credential leaks"
+        description="Install the Void Shield GitHub App to automate your security workflow and implement real-time vulnerability detection."
         variant="subtle"
         :links="[
           {
-            label: 'Start building',
-            to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
+            label: 'Install App',
+            to: 'https://github.com/apps/void-shield',
             target: '_blank',
             trailingIcon: 'i-lucide-arrow-right',
             color: 'neutral'
           },
           {
-            label: 'View on GitHub',
+            label: 'View Source',
             to: 'https://github.com/ahmoin/void-shield',
             target: '_blank',
             icon: 'i-simple-icons-github',
