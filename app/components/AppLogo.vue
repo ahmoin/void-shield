@@ -1,9 +1,5 @@
 <template>
-  <svg
-    viewBox="0 0 132.41 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg viewBox="0 0 132.41 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <mask
         id="app-logo-mask"
@@ -13,10 +9,7 @@
         height="24"
         maskUnits="userSpaceOnUse"
       >
-        <path
-          fill="#fff"
-          d="M-53.33 24H24s0-24 0-24H-53.33s0 24 0 24Z"
-        />
+        <path fill="#fff" d="M-53.33 24H24s0-24 0-24H-53.33s0 24 0 24Z" />
       </mask>
     </defs>
 
