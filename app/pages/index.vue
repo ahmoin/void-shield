@@ -10,8 +10,15 @@
           target: '_blank',
           trailingIcon: 'i-lucide-arrow-right',
           size: 'xl'
-        }
-      ]"
+        }, {
+          label: 'Docs',
+          to: 'https://github.com/nuxt-ui-templates/starter',
+          target: '_blank',
+          icon: 'i-simple-icons-github',
+          size: 'xl',
+          color: 'neutral',
+          variant: 'subtle'
+        }]"
     />
 
     <UPageSection
