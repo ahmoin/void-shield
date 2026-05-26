@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/content'],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/content', 'nuxt-auth-utils'],
 
   devtools: {
     enabled: true
@@ -34,6 +34,15 @@ export default defineNuxtConfig({
       markdown: {
         toc: { searchDepth: 1 }
       }
+    }
+  },
+
+  runtimeConfig: {
+    githubClientId: '',
+    githubClientSecret: '',
+    public: {
+      siteUrl: 'https://void-shield.vercel.app',
+      githubAppSlug: ''
     }
   },
 
