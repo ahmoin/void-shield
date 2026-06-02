@@ -6,15 +6,15 @@ if (loggedIn.value) {
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-neutral-950">
+  <div class="min-h-screen flex items-center justify-center">
     <div class="flex flex-col items-center gap-8 max-w-sm w-full px-6">
       <AppLogo class="h-10" />
 
       <div class="text-center">
-        <h1 class="text-2xl font-semibold text-white">
+        <h1 class="text-2xl font-semibold">
           Sign in to Void Shield
         </h1>
-        <p class="mt-2 text-sm text-neutral-400">
+        <p class="mt-2 text-sm text-muted">
           Security scanning for your GitHub repositories
         </p>
       </div>
@@ -34,7 +34,7 @@ if (loggedIn.value) {
         Continue with GitHub
       </UButton>
 
-      <p class="text-xs text-neutral-500 text-center">
+      <p class="text-xs text-muted text-center">
         By signing in, you agree to allow Void Shield to access your GitHub organizations and repositories.
       </p>
     </div>
