@@ -33,42 +33,42 @@ function install() {
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-neutral-950 p-6">
+  <div class="min-h-screen flex items-center justify-center p-6">
     <div class="w-full max-w-lg">
       <div class="flex items-center gap-3 mb-8">
         <div class="flex items-center gap-2">
-          <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-white">
+          <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">
             1
           </div>
-          <span class="text-sm font-medium text-white">Select your organization</span>
+          <span class="text-sm font-medium">Select your organization</span>
         </div>
-        <div class="flex-1 h-px bg-neutral-700" />
+        <div class="flex-1 h-px" />
         <div class="flex items-center gap-2">
-          <div class="w-6 h-6 rounded-full bg-neutral-700 flex items-center justify-center text-xs font-bold text-neutral-400">
+          <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">
             2
           </div>
-          <span class="text-sm text-neutral-400">Install Void Shield</span>
+          <span class="text-sm">Install Void Shield</span>
         </div>
       </div>
 
-      <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+      <div class="border border-neutral-800 rounded-xl p-6">
         <div class="flex items-center justify-center gap-4 mb-6">
           <AppLogo class="h-8" />
           <div class="flex gap-1">
-            <div class="w-1.5 h-1.5 rounded-full bg-neutral-600" />
-            <div class="w-1.5 h-1.5 rounded-full bg-neutral-600" />
-            <div class="w-1.5 h-1.5 rounded-full bg-neutral-600" />
+            <div class="w-1.5 h-1.5 rounded-full" />
+            <div class="w-1.5 h-1.5 rounded-full" />
+            <div class="w-1.5 h-1.5 rounded-full" />
           </div>
           <UIcon
             name="i-simple-icons-github"
-            class="size-8 text-white"
+            class="size-8"
           />
         </div>
 
-        <h2 class="text-xl font-semibold text-white text-center mb-1">
+        <h2 class="text-xl font-semibold text-center mb-1">
           Select an organization
         </h2>
-        <p class="text-sm text-neutral-400 text-center mb-6">
+        <p class="text-sm text-center mb-6">
           Choose where to install Void Shield
         </p>
 
@@ -78,7 +78,7 @@ function install() {
         >
           <UIcon
             name="i-lucide-loader-circle"
-            class="size-6 text-neutral-400 animate-spin"
+            class="size-6 animate-spin"
           />
         </div>
 
@@ -101,10 +101,10 @@ function install() {
               class="w-8 h-8 rounded-full"
             >
             <div class="flex-1 min-w-0">
-              <p class="text-sm font-medium text-white truncate">
+              <p class="text-sm font-medium truncate">
                 {{ data.personal.login }}
               </p>
-              <p class="text-xs text-neutral-500">
+              <p class="text-xs">
                 Personal account
               </p>
             </div>
@@ -135,10 +135,10 @@ function install() {
               class="w-8 h-8 rounded-full"
             >
             <div class="flex-1 min-w-0">
-              <p class="text-sm font-medium text-white truncate">
+              <p class="text-sm font-medium truncate">
                 {{ org.login }}
               </p>
-              <p class="text-xs text-neutral-500">
+              <p class="text-xs">
                 Organization
               </p>
             </div>

@@ -35,7 +35,8 @@ useSeoMeta({
         </NuxtLink>
       </template>
 
-      <UNavigationMenu :items="[{ label: 'Docs', to: '/login' }]" />
+      <UNavigationMenu :items="[{ label: 'Docs', to: '/docs/getting-started' }]" />
+      <UNavigationMenu :items="[{ label: 'Dashboard', to: '/login' }]" />
 
       <template #right>
         <UColorModeButton />
