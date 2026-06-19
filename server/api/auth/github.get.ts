@@ -2,7 +2,7 @@ export default defineEventHandler((event) => {
   const config = useRuntimeConfig()
 
   const state = Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)
-  setCookie(event, 'github_oauth_state', state, { httpOnly: true, maxAge: 600, sameSite: 'lax' })
+  setCookie(event, 'github_oauth_state', state, { httpOnly: true, secure: true, maxAge: 600, sameSite: 'lax' })
 
   const params = new URLSearchParams({
     client_id: config.githubClientId,
