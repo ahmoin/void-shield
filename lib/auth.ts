@@ -1,27 +1,22 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
-import * as schema from "@/lib/db/schema";
+import { account, session, user, verification } from "@/lib/db/schema";
 
 export const auth = betterAuth({
   baseURL:
     process.env.BETTER_AUTH_URL ??
     process.env.NEXT_PUBLIC_APP_URL ??
     "http://localhost:3000",
-  secret: process.env.BETTER_AUTH_SECRET!,
+  secret: process.env.BETTER_AUTH_SECRET ?? "",
   database: drizzleAdapter(db, {
     provider: "sqlite",
-    schema: {
-      user: schema.user,
-      session: schema.session,
-      account: schema.account,
-      verification: schema.verification,
-    },
+    schema: { user, session, account, verification },
   }),
   socialProviders: {
     github: {
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+      clientId: process.env.GITHUB_CLIENT_ID ?? "",
+      clientSecret: process.env.GITHUB_CLIENT_SECRET ?? "",
       scope: ["read:user", "user:email", "read:org"],
     },
   },
@@ -36,6 +31,7 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       create: {
+        // biome-ignore lint/suspicious/useAwait: better-auth requires async hook
         before: async (userData) => {
           if (!userData.email) {
             return {

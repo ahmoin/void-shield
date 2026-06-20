@@ -1,4 +1,3 @@
-import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import { type NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
@@ -28,7 +27,7 @@ export async function GET(request: NextRequest) {
 
   const octokit = new Octokit({
     authStrategy: createAppAuth,
-    auth: { appId: process.env.GITHUB_APP_ID!, privateKey },
+    auth: { appId: process.env.GITHUB_APP_ID ?? "", privateKey },
   });
 
   const { data: inst } = await octokit.apps.getInstallation({
