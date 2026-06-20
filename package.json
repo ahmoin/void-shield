@@ -1,9 +1,13 @@
 {
   "dependencies": {
     "@libsql/client": "^0.17.4",
+    "@octokit/auth-app": "^8.2.0",
+    "@octokit/rest": "^22.0.1",
     "@vercel/analytics": "^2.0.1",
+    "better-auth": "^1.6.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.2",
     "fumadocs-core": "^16.10.4",
     "fumadocs-mdx": "^15.0.12",
     "fumadocs-ui": "^16.10.4",
@@ -26,6 +30,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
+    "drizzle-kit": "^0.31.10",
     "tailwindcss": "^4",
     "typescript": "^5",
     "ultracite": "7.8.3",

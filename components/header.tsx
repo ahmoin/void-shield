@@ -45,10 +45,12 @@ export function Header() {
               <a href={link.href}>{link.label}</a>
             </Button>
           ))}
-          <Button size="sm" variant="outline">
-            Sign In
+          <Button asChild size="sm" variant="outline">
+            <Link href="/login">Log In</Link>
           </Button>
-          <Button size="sm">Get Started</Button>
+          <Button asChild size="sm">
+            <Link href="/contact">Contact</Link>
+          </Button>
         </div>
         <MobileNav />
       </nav>

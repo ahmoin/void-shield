@@ -1,4 +1,5 @@
 import { MenuIcon, XIcon } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 import { navLinks } from "@/components/header";
 import { Portal, PortalBackdrop } from "@/components/portal";
@@ -49,9 +50,11 @@ export function MobileNav() {
             </div>
             <div className="mt-12 flex flex-col gap-2">
               <Button className="w-full" variant="outline">
-                Sign In
+                Log In
               </Button>
-              <Button className="w-full">Get Started</Button>
+              <Button asChild className="w-full">
+                <Link href="/contact">Contact</Link>
+              </Button>
             </div>
           </div>
         </Portal>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { InfiniteSlider } from "@/components/infinite-slider";
 
 export function LogoCloud() {
@@ -5,14 +6,13 @@ export function LogoCloud() {
     <div className="mask-[linear-gradient(to_right,transparent,black,transparent)] overflow-hidden py-4">
       <InfiniteSlider gap={42} reverse speed={80} speedOnHover={25}>
         {logos.map((logo) => (
-          <img
+          <Image
             alt={logo.alt}
-            className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
-            height="auto"
+            className="pointer-events-none h-4 w-auto select-none md:h-5 dark:brightness-0 dark:invert"
+            height={20}
             key={`logo-${logo.alt}`}
-            loading="lazy"
             src={logo.src}
-            width="auto"
+            width={120}
           />
         ))}
       </InfiniteSlider>
@@ -21,36 +21,12 @@ export function LogoCloud() {
 }
 
 const logos = [
-  {
-    src: "https://storage.efferd.com/logo/nvidia-wordmark.svg",
-    alt: "Nvidia Logo",
-  },
-  {
-    src: "https://storage.efferd.com/logo/supabase-wordmark.svg",
-    alt: "Supabase Logo",
-  },
-  {
-    src: "https://storage.efferd.com/logo/openai-wordmark.svg",
-    alt: "OpenAI Logo",
-  },
-  {
-    src: "https://storage.efferd.com/logo/turso-wordmark.svg",
-    alt: "Turso Logo",
-  },
-  {
-    src: "https://storage.efferd.com/logo/vercel-wordmark.svg",
-    alt: "Vercel Logo",
-  },
-  {
-    src: "https://storage.efferd.com/logo/github-wordmark.svg",
-    alt: "GitHub Logo",
-  },
-  {
-    src: "https://storage.efferd.com/logo/claude-wordmark.svg",
-    alt: "Claude AI Logo",
-  },
-  {
-    src: "https://storage.efferd.com/logo/clerk-wordmark.svg",
-    alt: "Clerk Logo",
-  },
+  { src: "/logos/nvidia-wordmark.svg", alt: "Nvidia Logo" },
+  { src: "/logos/supabase-wordmark.svg", alt: "Supabase Logo" },
+  { src: "/logos/openai-wordmark.svg", alt: "OpenAI Logo" },
+  { src: "/logos/turso-wordmark.svg", alt: "Turso Logo" },
+  { src: "/logos/vercel-wordmark.svg", alt: "Vercel Logo" },
+  { src: "/logos/github-wordmark.svg", alt: "GitHub Logo" },
+  { src: "/logos/claude-wordmark.svg", alt: "Claude AI Logo" },
+  { src: "/logos/clerk-wordmark.svg", alt: "Clerk Logo" },
 ];
