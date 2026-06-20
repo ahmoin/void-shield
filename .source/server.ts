@@ -1,10 +1,32 @@
 // @ts-nocheck
-import { server } from 'fumadocs-mdx/runtime/server';
-import type * as Config from '../source.config';
 
-const create = server<typeof Config, import("fumadocs-mdx/runtime/types").InternalTypeConfig & {
-  DocData: {
+import { server } from "fumadocs-mdx/runtime/server";
+import { default as __fd_glob_1 } from "../content/docs/configuration/meta.json?collection=docs";
+import * as __fd_glob_3 from "../content/docs/configuration/voidshield-json.mdx?collection=docs";
+import * as __fd_glob_4 from "../content/docs/getting-started/index.mdx?collection=docs";
+import * as __fd_glob_5 from "../content/docs/getting-started/installation.mdx?collection=docs";
+import { default as __fd_glob_2 } from "../content/docs/getting-started/meta.json?collection=docs";
+import { default as __fd_glob_0 } from "../content/docs/meta.json?collection=docs";
+import type * as Config from "../source.config";
+
+const create = server<
+  typeof Config,
+  import("fumadocs-mdx/runtime/types").InternalTypeConfig & {
+    DocData: {};
   }
-}>({"doc":{"passthroughs":["extractedReferences"]}});
+>({ doc: { passthroughs: ["extractedReferences"] } });
 
-export const docs = await create.docs("docs", "content/docs", {}, {});
+export const docs = await create.docs(
+  "docs",
+  "content/docs",
+  {
+    "meta.json": __fd_glob_0,
+    "configuration/meta.json": __fd_glob_1,
+    "getting-started/meta.json": __fd_glob_2,
+  },
+  {
+    "configuration/voidshield-json.mdx": __fd_glob_3,
+    "getting-started/index.mdx": __fd_glob_4,
+    "getting-started/installation.mdx": __fd_glob_5,
+  }
+);

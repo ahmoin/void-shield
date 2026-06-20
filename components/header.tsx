@@ -9,16 +9,16 @@ import { cn } from "@/lib/utils";
 
 export const navLinks = [
   {
+    label: "Docs",
+    href: "/docs",
+  },
+  {
     label: "Features",
-    href: "#",
+    href: "#features",
   },
   {
     label: "Pricing",
-    href: "#",
-  },
-  {
-    label: "About",
-    href: "#",
+    href: "#pricing",
   },
 ];
 

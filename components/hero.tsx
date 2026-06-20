@@ -1,5 +1,6 @@
-import { ArrowRightIcon, PhoneCallIcon, RocketIcon } from "lucide-react";
+import { ArrowRightIcon, ShieldCheckIcon, ZapIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {
@@ -41,12 +42,11 @@ export function HeroSection() {
             "group mx-auto flex w-fit items-center gap-3 rounded-full border bg-card px-3 py-1 shadow",
             "fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards transition-all delay-500 duration-500 ease-out"
           )}
-          href="#link"
+          href="/docs/getting-started"
         >
-          <RocketIcon className="size-3 text-muted-foreground" />
-          <span className="text-xs">shipped new features!</span>
+          <ShieldCheckIcon className="size-3 text-muted-foreground" />
+          <span className="text-xs">Available on GitHub Marketplace</span>
           <span className="block h-5 border-l" />
-
           <ArrowRightIcon className="size-3 duration-150 ease-out group-hover:translate-x-1" />
         </a>
 
@@ -56,20 +56,28 @@ export function HeroSection() {
             "text-shadow-[0_0px_50px_theme(--color-foreground/.2)]"
           )}
         >
-          Building Teams Help <br /> You Scale and Lead
+          {siteConfig.description}
         </h1>
 
-        <p className="fade-in slide-in-from-bottom-10 mx-auto max-w-md animate-in fill-mode-backwards text-center text-base text-foreground/80 tracking-wider delay-200 duration-500 ease-out sm:text-lg md:text-xl">
-          Conecting you with world-class talent <br /> to scale, innovate and
-          lead
+        <p className="fade-in slide-in-from-bottom-10 mx-auto max-w-lg animate-in fill-mode-backwards text-center text-base text-foreground/80 tracking-wider delay-200 duration-500 ease-out sm:text-lg md:text-xl">
+          {siteConfig.tagline}
         </p>
 
         <div className="fade-in slide-in-from-bottom-10 flex animate-in flex-row flex-wrap items-center justify-center gap-3 fill-mode-backwards pt-2 delay-300 duration-500 ease-out">
-          <Button className="rounded-full" size="lg" variant="secondary">
-            <PhoneCallIcon data-icon="inline-start" /> Book a Call
+          <Button
+            asChild
+            className="rounded-full"
+            size="lg"
+            variant="secondary"
+          >
+            <a href="/docs">
+              <ZapIcon data-icon="inline-start" /> Read the docs
+            </a>
           </Button>
-          <Button className="rounded-full" size="lg">
-            Get started <ArrowRightIcon data-icon="inline-end" />
+          <Button asChild className="rounded-full" size="lg">
+            <a href={siteConfig.links.githubApp} rel="noopener" target="_blank">
+              Install on GitHub <ArrowRightIcon data-icon="inline-end" />
+            </a>
           </Button>
         </div>
       </div>
