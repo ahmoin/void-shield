@@ -3,11 +3,24 @@
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { MobileNav } from "@/components/mobile-nav";
-import { ModeSwitcher } from "@/components/mode-switcher";
 import { Button } from "@/components/ui/button";
 import { useScroll } from "@/hooks/use-scroll";
-import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
+
+export const navLinks = [
+  {
+    label: "Features",
+    href: "#",
+  },
+  {
+    label: "Pricing",
+    href: "#",
+  },
+  {
+    label: "About",
+    href: "#",
+  },
+];
 
 export function Header() {
   const scrolled = useScroll(10);
@@ -22,30 +35,20 @@ export function Header() {
       <nav className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4">
         <Link
           className="rounded-md p-2 hover:bg-muted dark:hover:bg-muted/50"
-          href={siteConfig.url}
+          href="/"
         >
           <Icons.logoFull className="h-4" />
         </Link>
         <div className="hidden items-center gap-2 md:flex">
-          <Button asChild size="icon" variant="outline">
-            <Link
-              href={siteConfig.links.twitter}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Icons.twitter />
-            </Link>
+          {navLinks.map((link) => (
+            <Button asChild key={link.label} size="sm" variant="ghost">
+              <a href={link.href}>{link.label}</a>
+            </Button>
+          ))}
+          <Button size="sm" variant="outline">
+            Sign In
           </Button>
-          <Button asChild size="icon" variant="outline">
-            <Link
-              href={siteConfig.links.gitHub}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Icons.gitHub />
-            </Link>
-          </Button>
-          <ModeSwitcher className="ml-2" variant="outline" />
+          <Button size="sm">Get Started</Button>
         </div>
         <MobileNav />
       </nav>
