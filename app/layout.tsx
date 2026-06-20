@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 
 import "./globals.css";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon-black.png", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-white.png", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
+};
+
 import { Analytics } from "@/components/analytics";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
