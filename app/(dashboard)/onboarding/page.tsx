@@ -2,7 +2,6 @@
 
 import { ArrowRightIcon, BuildingIcon, UserIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
 
 interface GithubTarget {
