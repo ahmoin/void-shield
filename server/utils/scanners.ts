@@ -26,6 +26,8 @@ const ENV_FILE_PATTERNS = [
 const INTERNAL_IP_PATTERN =
   /\b(10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3})\b/;
 
+const COMMENT_PATTERN = /^\s*(#|\/\/|\/\*)/;
+
 export interface ScanFinding {
   line?: number;
   message: string;
@@ -46,7 +48,6 @@ export function scanFile(
   const findings: ScanFinding[] = [];
   const filename = path.split("/").pop() ?? path;
 
-  // env file committed
   if (ENV_FILE_PATTERNS.some((p) => p.test(filename))) {
     findings.push({
       path,
@@ -62,12 +63,10 @@ export function scanFile(
     const line = lines[i] ?? "";
     const lineNum = i + 1;
 
-    // skip comments
-    if (/^\s*(#|\/\/|\/\*)/.test(line)) {
+    if (COMMENT_PATTERN.test(line)) {
       continue;
     }
 
-    // secret patterns
     for (const { name, pattern } of SECRET_PATTERNS) {
       if (pattern.test(line)) {
         findings.push({
@@ -81,7 +80,6 @@ export function scanFile(
       }
     }
 
-    // internal IPs
     if (INTERNAL_IP_PATTERN.test(line)) {
       findings.push({
         path,
@@ -101,8 +99,8 @@ export function findingsToAnnotations(findings: ScanFinding[]) {
     .filter((f) => f.line !== undefined)
     .map((f) => ({
       path: f.path,
-      start_line: f.line!,
-      end_line: f.line!,
+      start_line: f.line as number,
+      end_line: f.line as number,
       annotation_level:
         f.severity === "critical" || f.severity === "high"
           ? ("failure" as const)
