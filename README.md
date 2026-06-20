@@ -16,4 +16,5 @@
   <a href="https://void-shield.vercel.app">Website</a> ·
   <a href="https://github.com/marketplace">GitHub Marketplace</a> ·
   <a href="https://github.com/ahmoin/void-shield/issues">Issues</a>
+  <a href="https://void-shield.vercel.app/docs/getting-started">Documentation</a>
 </p>

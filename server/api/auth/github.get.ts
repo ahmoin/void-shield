@@ -5,6 +5,7 @@ export default defineEventHandler((event) => {
     Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
   setCookie(event, "github_oauth_state", state, {
     httpOnly: true,
+    secure: true,
     maxAge: 600,
     sameSite: "lax",
   });
